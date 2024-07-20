@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Create a new list item
+    // a new list item
     const listItem = document.createElement("li");
     listItem.textContent = taskText;
 
