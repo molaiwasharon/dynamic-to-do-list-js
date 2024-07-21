@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to add a new task
   function addTask(taskText, save = true) {
-    if (taskText.trim() === "") {
+    // Retrieve and trim the value from the task input field
+    taskText = taskText || taskInput.value.trim();
+
+    // Check if taskText is not empty
+    if (taskText === "") {
       alert("Please enter a task.");
       return;
     }
@@ -63,13 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listener for the Add Task button
   addButton.addEventListener("click", function () {
-    addTask(taskInput.value);
+    addTask();
   });
 
   // Event listener for pressing Enter key in the input field
   taskInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-      addTask(taskInput.value);
+      addTask();
     }
   });
 
